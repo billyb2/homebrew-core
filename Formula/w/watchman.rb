@@ -62,7 +62,7 @@ class Watchman < Formula
                     "-DPython3_EXECUTABLE=#{which("python3.12")}",
                     "-DWATCHMAN_VERSION_OVERRIDE=#{version}",
                     "-DWATCHMAN_BUILDINFO_OVERRIDE=#{tap.user}",
-                    "-DWATCHMAN_STATE_DIR=#{var}/run/watchman",
+                    "-DWATCHMAN_STATE_DIR=/tmp",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
@@ -71,11 +71,6 @@ class Watchman < Formula
     bin.install (path/"bin").children
     lib.install (path/"lib").children
     path.rmtree
-  end
-
-  def post_install
-    (var/"run/watchman").mkpath
-    chmod 042777, var/"run/watchman"
   end
 
   test do
