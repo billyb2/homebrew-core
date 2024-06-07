@@ -1,8 +1,8 @@
 class S6 < Formula
   desc "Small & secure supervision software suite"
   homepage "https://skarnet.org/software/s6/"
-  url "https://skarnet.org/software/s6/s6-2.12.0.4.tar.gz"
-  sha256 "c95d51787602e0c8c8e4f92a710cbdaa4ee797ee886e71342727e2974f95c06b"
+  url "https://skarnet.org/software/s6/s6-2.13.0.0.tar.gz"
+  sha256 "7e46f8f55d80bb0e2025a64d5d649af4a4ac21e348020caaadde30ba5e5b4830"
   license "ISC"
 
   livecheck do
