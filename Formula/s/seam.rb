@@ -3,8 +3,8 @@ require "language/node"
 class Seam < Formula
   desc "This utility lets you control Seam resources"
   homepage "https://github.com/seamapi/seam-cli"
-  url "https://registry.npmjs.org/seam-cli/-/seam-cli-0.0.55.tgz"
-  sha256 "ce344169eed14ffd47e17a40cefa94634b3176357ea984175f5eaab02cd689e0"
+  url "https://registry.npmjs.org/seam-cli/-/seam-cli-0.0.57.tgz"
+  sha256 "97a29f3a2fbde70c37d07c7ec4f658b5b8c551d85b7ab4bc016d26eb045e7e29"
   license "MIT"
 
   bottle do
@@ -25,8 +25,7 @@ class Seam < Formula
   end
 
   test do
-    system bin/"seam", "config", "set", "fake-server"
-    output = shell_output("#{bin}/seam health get_health")
-    assert_match "I’m one with the Force. The Force is with me.", output
+    output = shell_output("#{bin}/seam devices list 2>&1", 1)
+    assert_match "Not logged in. Please run \"seam login\"", output
   end
 end
