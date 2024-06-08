@@ -839,6 +839,7 @@ gdal
 gdcm
 gdk-pixbuf
 gdu
+gedit
 geeqie
 gegl
 genact
